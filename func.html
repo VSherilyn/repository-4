@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+</head>
+
+<body>
+	<script>
+	/*	var a = parseInt(prompt('enter a'));
+		var b = parseInt(prompt('enter b'));
+		function max(a, b) {
+			if (a > b) return a;
+			else if (a < b) return b;
+		}
+		console.log("Max is " + max(a, b));
+		
+		var c = parseInt(prompt('enter c'));
+		var d = parseInt(prompt('enter d'));
+		function min(c, d) {
+			if (c < d) return c;
+			else if (c > d) return d;
+		}
+		console.log("Min is " + min(c, d));
+		
+		function area(k, l) {
+			return k*l;
+		}
+		a = parseInt(prompt());
+		b = parseInt(prompt());
+		s1 = area(a, b);
+		c = parseInt(prompt());
+		d = parseInt(prompt());
+		s2 = area(c, d);
+		console.log("Bigger area is " + max(s1, s2)); */
+		
+		
+		function bla() {
+			for (var i = 0; i < arguments.length; i++)
+			{
+				alert(i + ", " + arguments[i]);
+			}
+			return arguments;
+		}
+		bla("arg1", "arg2", "arg3");
+		function copy() {
+			var CopyAr = arguments[0];
+			for (var i = 1; i < arguments.length; i++) 
+			{
+				var Ar = arguments[i];
+				for (var key in Ar)
+				{
+				CopyAr[key] = Ar[key];
+				}
+			}
+			return CopyAr;
+		}
+		console.log(copy(bla("34", "345")));
+	</script>
+</body>
+</html>
