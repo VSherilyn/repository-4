@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+</head>
+
+<body>
+	<script>
+		var score = prompt('Enter score: ');
+		if (score <= 59) {
+			alert('Your mark is Fx');
+		}
+		else {
+			if (score <= 64) {
+				alert('Your mark is E');
+			}
+			else {
+				if (score <= 74) {
+					alert('Your mark is D');
+				}
+				else {
+					if (score <= 84) {
+						alert('Your mark is C');
+					}
+					else {
+						if (score <= 94) {
+							alert('Your mark is B');
+						}
+						else if (score <= 100) {
+							alert('Your mark is A');
+						}
+							else alert('Wrong value');
+					}
+				}
+			}
+		}
+	</script>
+</body>
