@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+	<style>
+  button {
+    transition: width 1s;
+    width: 125px;
+  }
+
+  .wide {
+    width: 300px;
+  }
+</style>
+<p>Let's play.</p>
+<p id="click"></p>
+<p id="clickk"></p>
+<button onclick="openWin()">Create window</button>
+<button onclick="resizeWin()">Resize window</button>
+<button onclick="reduceWin()">Reduce window</button>
+<button onclick="scrollNewWin()">Scroll new window</button>
+<button onclick="blurFocus()">Blur</button>
+<button id="elem">Click on me</button>
+<button id="elem1" onclick="this.classList.toggle('wide');">Hey !</button>
+
+<script>
+var myWindow;
+
+function openWin() {
+    myWindow = window.open("", "", "width=100, height=100");
+	myWindow.document.write("<p>A new window!</p>");
+}
+
+function resizeWin() {
+    myWindow.resizeBy(500, 500);
+    myWindow.focus();
+}
+
+function reduceWin() {
+	myWindow.resizeTo(250, 250);
+	myWindow.focus();
+}
+
+function scrollNewWin() {
+	myWindow.scrollBy(100, 0);
+	myWindow.focus();
+}
+
+function blurFocus() {
+	myWindow.focus();
+	myWindow.setTimeout(function() {myWindow.blur()}, 3000);
+}
+
+elem.onclick = function Event(event) {
+	click.innerHTML = event.type + " on " + event.currentTarget;
+	clickk.innerHTML = event.clientX + ":" + event.clientY;
+	console.log(event.clientX + ":" + event.clientY);
+}
+
+function Handler1() {
+		elem.style.color = "indigo";
+}
+elem.addEventListener("mouseover", Handler1);
+</script>
+
+</body>
+</html>
