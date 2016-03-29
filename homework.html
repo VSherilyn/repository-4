@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+</head>
+
+<body>
+	<script>
+		var Arry = [3,6,4,5,28,8,9];
+		
+		function countDividers(num) {
+			
+			for(var i = 2; i <= Math.round(num / 2); i++) {
+				if(num % i === 0) num++
+			}
+			return num;
+		}
+		Arry.sort(function(a,b) {
+			return countDividers(a) < countDividers(b);
+			
+		})
+		console.log(Arry); // 1
+		
+	//---------------------------------------------------
+	
+		var str1 = "      trjio       itjroi jt    ji    ";
+		var str2 = str1.trim();
+		console.log(str2.replace(/\s+/g, " ")); //2
+		
+	//---------------------------------------------------
+		
+		var url = location.url;
+		var re = /^(ht|f)tps?:\/\/[a-z0-9-\.]+\.[a-z]{2,4}\/?([^\s<>\#%"\,\{\}\\|\\\^\[\]`]+)?$/;
+		if (!re.test(url)) { 
+			alert("url error");
+		}
+		var x = {
+			host: location.host, 
+			path: location.pathname.substr(1).split('/')
+			}
+		console.log(x); //3
+			
+	//---------------------------------------------------
+		
+		var Constructor = function(name, message, date) {
+			this.name = name;
+			this.message = message;
+			this.date = date;
+		}
+		Constructor.prototype.setMessage = function(message) {
+			this.message = message;
+		}
+		
+		function sortConstructors(a, b) {
+			return a.date < b.date;
+		}
+		
+		var c1 = new Constructor('name', 'message', new Date()),
+		    c2 = new Constructor('name', 'message', new Date()),
+			sortedArray = [c2, c1].sort(sortConstructors);
+		
+		c1.setMessage('xyi^i');
+		console.log(sortedArray); //4
+		
+	//-----------------------------------------------------
+	
+	var date = new Date(prompt('Please, set date like mm.dd.yy')),
+    parsedDate = new Date(date),
+    dateTimestamp = date.getTime()/1000,
+    nowTimestamp = (new Date()).getTime()/1000,
+    resultDate = Math.abs(nowTimestamp - dateTimestamp);
+
+	console.log(Math.round(resultDate/60/60/24/30/12) + ' years', Math.round(resultDate/60/60/24/30) + 
+	' months', Math.round(resultDate/60/60/24) + ' days', Math.round(resultDate/60/60) + ' hours', 
+	Math.round(resultDate/60) + ' minutes', resultDate + ' seconds'); 
+	
+	var a = 60*60*24*30*12;
+		b = 60*60*24*30;
+		c = 60*60*24;
+		d = 60*60;
+		e = 60;
+	
+	var years = parseInt(resultDate/a),
+		months = parseInt((resultDate%a)/b),
+		days = parseInt(((resultDate%a)%b)/c),
+		hours = parseInt((((resultDate%a)%b)%c)/d),
+		minutes = parseInt(((((resultDate%a)%b)%c)%d)/e),
+		seconds = parseInt(((((resultDate%a)%b)%c)%d)%e);
+	console.log(years + " years " + months + " months " + days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds"); //5
+	</script>
+</body>
