@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <h3>All posts</h3>
+    <div id="posts"></div>
+    <h3>Creating a new post</h3>
+    <input type="text" class="header_input1" placeholder="Header...">
+    <input type="text" class="post_input1" placeholder="Post...">
+    <input type="text" class="comment_input1" placeholder="Comment...">
+    <br/> <br/>
+    <button class="create" onclick="addpost()">Create post</button>
+    <h3>Editing</h3>
+    <input type="text" class="header_input2" placeholder="Header...">
+    <input type="text" class="post_input2" placeholder="Post...">
+    <input type="text" class="comment_input2" placeholder="Comment...">
+    <input type="text" class="del_p" placeholder="Number...">
+    <button class="view" onclick="view_post()">View post</button>
+    <button class="edit" onclick="edit_post()">Edit post</button>
+    <button class="delete" onclick="delete_post()">Delete post</button>
+    <br/> <br/>
+    <input class="button-sort" type="button" value="Sort" onclick="sorting()">
+
+    <script src="fsbn.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+</html>
