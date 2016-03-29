@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+</head>
+
+<body>
+	<script>
+		var a = parseInt(prompt('Нижняя граница: '));
+		var b = parseInt(prompt('Верхняя граница: '));
+		var i = 0;
+		var sum = 0;
+		for(a; a <= b; a++) {
+			if (a % 2 == 0) {
+				sum += a;
+				console.log(sum, a);
+				
+			}
+			else {
+				i += 1;
+			}
+		}
+		alert("Сумма четных: " + sum + ", кол-во нечетных: " + i);
+	</script>
+</body>
+</html>
